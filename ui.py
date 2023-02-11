@@ -1,6 +1,8 @@
+import datetime as dt
 import checks as ch
 from colorama import Fore, Back, Style 
 import logger as log
+from datetime import datetime as dt
 
 
 def greetings_user():
@@ -31,15 +33,18 @@ def get_note():
 def add_note(): #добавить зaметку
     note = []
     print(Fore.CYAN + Style.BRIGHT)
-    text = ch.get_note_number(f'{Fore.CYAN + Style.BRIGHT}-> Номер заметки: {Fore.LIGHTGREEN_EX + Style.BRIGHT}')
+    text = dt.now().strftime('%D')
     note.append(text)
-    note.append(text)
+    
+    # text = ch.get_note_number(f'{Fore.CYAN + Style.BRIGHT}-> номер заметки: {Fore.LIGHTGREEN_EX + Style.BRIGHT}')
+    # note.append(text)
+    
     text = ch.get_title(f'{Fore.CYAN + Style.BRIGHT}-> название : {Fore.LIGHTGREEN_EX + Style.BRIGHT} ')
-    text = text.capitalize()
-    note.append(text + ' :')
+    
+    note.append(text + ' ')
     text = ch.get_comment(f'{Fore.CYAN + Style.BRIGHT}-> описание : {Fore.LIGHTGREEN_EX + Style.BRIGHT}')
-    text = text.capitalize()
-    note.append(text + ' ;')
+ 
+    note.append(text + ' ')
     print(f'\n{Fore.GREEN} заметка успешно добавлена {Style.RESET_ALL}')
     print(Style.RESET_ALL)
     log.add_note_logger(note)
@@ -70,8 +75,7 @@ def show_menu()-> None:
       ' 1 - <добавление новой заметки> \n'
       ' 2 - <поиск заметки> \n'
       ' 3 - <просмотр заметок> \n'
-      ' 4 -  <запись в json> \n'
-      ' 5 - <выход> \n'
+      ' 4 - <выход> \n'
       f' ➡ : {Fore.LIGHTGREEN_EX + Style.BRIGHT}')
     
     

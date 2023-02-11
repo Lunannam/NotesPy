@@ -1,7 +1,7 @@
 
 import operation as o
 import ui as ui
-import logger as log
+
 
 
 def button_click():
@@ -31,9 +31,6 @@ def button_click():
         elif choice == 3:
             result = o.read_csv()
             ui.view_data(result)
-
-        elif choice == 4:
-            o.write_json()
 
         else:
             ui.farewell_user()
