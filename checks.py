@@ -59,18 +59,3 @@ def get_comment(input_string: str) -> str:
                 print('вы ввели слишком много символов. Краткость - сестра таланта!')
         
 
-def note_number(num: str) -> bool:
-    '''
-    Проверка заметки на совпадение в базе
-    '''
-    path = 'data.csv'
-    with open(path, encoding='utf-8') as file:
-        reader = csv.reader(file, delimiter=' ')
-        for line in reader:
-            for i in line:    
-                if i in line:
-                    print('заметка уже существует, введите другое название!')
-                    return True
-                else:
-                    return False
-
