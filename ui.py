@@ -35,7 +35,8 @@ def add_note(): #добавить зaметку
     print(Fore.CYAN + Style.BRIGHT)
     text = dt.now().strftime('%D')
     note.append(text)
-    
+    text = id
+    note.append(text)
     # text = ch.get_note_number(f'{Fore.CYAN + Style.BRIGHT}-> номер заметки: {Fore.LIGHTGREEN_EX + Style.BRIGHT}')
     # note.append(text)
     
